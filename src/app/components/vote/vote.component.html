@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <h2 class="text-info">Voting App</h2>
+  <div class="table-responsive-sm">
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Team</th>
+          <th scope="col" colspan="2">Vote</th>
+          <th scope="col">Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let team of teams">
+          <th class="text-info" scope="row">{{team.id + 1}}</th>
+          <td class="text-info">{{team.teamName}}</td>
+          <td class="text-primary btnTest" (click)="increaseVote(team.id)"><i class="fa fa-arrow-up mr-2" aria-hidden="true"></i>Up</td>
+          <td class="text-danger btnTest" (click)="decreaseVote(team.id)"><i class="fa fa-arrow-down mr-2" aria-hidden="true"></i>Down</td>
+          <td class="text-success">{{team.count}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
